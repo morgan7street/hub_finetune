@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light theme colors */
+  --color-primary: 67, 56, 202;
+  --color-primary-light: 99, 102, 241;
+  --color-secondary: 13, 148, 136;
+  --color-accent: 245, 158, 11;
+  --color-success: 22, 163, 74;
+  --color-warning: 234, 88, 12;
+  --color-error: 220, 38, 38;
+  --color-background: 248, 250, 252;
+  --color-surface: 255, 255, 255;
+  --color-text: 15, 23, 42;
+  --color-text-secondary: 100, 116, 139;
+  --color-border: 226, 232, 240;
+}
+
+.dark {
+  /* Dark theme colors */
+  --color-primary: 79, 70, 229;
+  --color-primary-light: 129, 140, 248;
+  --color-secondary: 20, 184, 166;
+  --color-accent: 251, 191, 36;
+  --color-success: 34, 197, 94;
+  --color-warning: 249, 115, 22;
+  --color-error: 239, 68, 68;
+  --color-background: 15, 23, 42;
+  --color-surface: 30, 41, 59;
+  --color-text: 248, 250, 252;
+  --color-text-secondary: 148, 163, 184;
+  --color-border: 51, 65, 85;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply bg-background text-text transition-colors duration-300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-semibold;
+}
+
+/* Custom component styles */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-md font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-primary-light focus:ring-primary;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-secondary text-white hover:bg-opacity-90 focus:ring-secondary;
+  }
+  
+  .btn-outline {
+    @apply btn border border-border text-text hover:bg-background-light focus:ring-primary;
+  }
+  
+  .card {
+    @apply bg-surface rounded-xl border border-border p-4 shadow-sm transition-all hover:shadow-md dark:shadow-gray-900/10;
+  }
+  
+  .glass-card {
+    @apply bg-white/80 dark:bg-surface/80 backdrop-blur-sm border border-white/20 dark:border-gray-700/30 rounded-xl p-6 shadow-lg;
+  }
+  
+  .input {
+    @apply px-4 py-2 bg-surface dark:bg-gray-800 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all;
+  }
+  
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .badge-primary {
+    @apply badge bg-primary/10 text-primary;
+  }
+  
+  .badge-secondary {
+    @apply badge bg-secondary/10 text-secondary;
+  }
+  
+  .badge-success {
+    @apply badge bg-success/10 text-success;
+  }
+  
+  .badge-warning {
+    @apply badge bg-warning/10 text-warning;
+  }
+  
+  .badge-error {
+    @apply badge bg-error/10 text-error;
+  }
+}
